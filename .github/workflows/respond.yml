@@ -1,0 +1,40 @@
+name: Respond to new requests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "requests/**"
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  respond:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Find newly added request files
+        id: files
+        run: |
+          FILES=$(git diff --name-only --diff-filter=A HEAD^ HEAD -- 'requests/*.md' | tr '\n' ' ')
+          echo "files=$FILES" >> "$GITHUB_OUTPUT"
+
+      - name: React to them
+        if: steps.files.outputs.files != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CHANGED_FILES: ${{ steps.files.outputs.files }}
+        run: node scripts/respond.mjs $CHANGED_FILES
+
+      - name: Commit PROCESSED.md
+        run: |
+          git config user.name "org2-agent"
+          git config user.email "org2-agent@users.noreply.github.com"
+          git add PROCESSED.md
+          git diff --cached --quiet || git commit -m "chore: log processed request(s)"
+          git push
