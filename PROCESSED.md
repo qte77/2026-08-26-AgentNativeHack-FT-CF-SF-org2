@@ -8,3 +8,4 @@ Appended automatically by scripts/respond.mjs on every new request. No human edi
 - `requests/c6269793-6f4f-4dcf-86ae-edee494a61fa.md` — Improve documentation for the "src" directory based on its high edit frequency. ([issue](https://github.com/qte77/2026-08-26-AgentNativeHack-FT-CF-SF-org2/issues/8))
 - `requests/c79be9c3-f285-4319-9ce2-e258552a7d29.md` — Improve documentation for the src directory to support ongoing development activity. ([issue](https://github.com/qte77/2026-08-26-AgentNativeHack-FT-CF-SF-org2/issues/9))
 - `requests/17f3444d-ed12-4668-ac2b-3bf70db7a371.md` — Improve documentation for the src directory to support ongoing development activity. ([issue](https://github.com/qte77/2026-08-26-AgentNativeHack-FT-CF-SF-org2/issues/10))
+- `requests/348d810e-6053-45a7-b819-7e5404ffedf9.md` — Improve documentation for the src directory based on high edit frequency. ([issue](https://github.com/qte77/2026-08-26-AgentNativeHack-FT-CF-SF-org2/issues/11))
