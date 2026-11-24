@@ -22,3 +22,7 @@ unrelated to the idle-discovery agent's code. It triggers on every push that add
 `GITHUB_TOKEN` GitHub Actions provides automatically (no credential shared with the other repo).
 Two independent systems, two independent pieces of automation, talking through real GitHub API
 calls — not one agent pretending to be two.
+
+## License
+
+[Apache-2.0](LICENSE).
